@@ -1,0 +1,76 @@
+---
+import TechCard from "./TechCard.astro";
+
+interface Technology {
+  name: string;
+  color: string;
+}
+export interface Props {
+  title: string;
+  href: string;
+  className?: string;
+  ariaLabel?: string;
+  description?: string;
+  image?: string;
+  disabled?: boolean;
+  technologies: Technology[];
+}
+
+const {
+  title,
+  href,
+  className,
+  ariaLabel,
+  description,
+  image,
+  disabled,
+  technologies,
+} = Astro.props;
+---
+
+<div class={"p-4 my-2 rounded-lg h-52"}>
+  <div class="grid-cols-12 flex-col space-x-4 sm:flex sm:flex-row">
+    <!-- image -->
+    <div
+      class="col-span-12 flex w-full items-center justify-center hover:cursor-pointer sm:col-span-3 sm:w-fit"
+    >
+      <img class="h-36 w-fit rounded-lg" src={image} alt={title} />
+    </div>
+
+    <!-- desc -->
+    <div class="col-span-12 w-fit sm:col-span-9">
+      <div
+        class="flex flex-wrap text-2xl font-bold hover:cursor-pointer hover:text-skin-accent"
+      >
+        <a href={href}>{title}</a>
+      </div>
+      <div class="my-2 flex flex-wrap">
+        {
+          technologies?.map((tech, index) => {
+            return <TechCard tech={tech} />;
+          })
+        }
+      </div>
+      <div class="text-sm">
+        {description}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <a
+  type="button"
+  href={disabled ? "#" : href}
+  tabindex={disabled ? "-1" : "0"}
+  class={`group ${className}`}
+  aria-label={ariaLabel}
+  title={title}
+  aria-disabled={disabled}
+>
+  <slot />
+</a>
+
+<style>
+  a {
+    @apply hover:text-skin-accent;
+  }
+</style> -->
