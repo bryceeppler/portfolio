@@ -1,20 +1,23 @@
 ---
-author: Sat Naing
-pubDatetime: 2022-12-28T04:59:04.866Z
-title: Dynamic OG image generation in AstroPaper blog posts
-postSlug: dynamic-og-image-generation-in-astropaper-blog-posts
-featured: false
+author: Bryce Eppler
+pubDatetime: 2023-03-02T16:59:04.866Z
+title: Building a Reliable Network Protocol with UDP
+postSlug: udp-reliable-network-protocol
+featured: true
 draft: true
 tags:
-  - docs
-  - release
+  - udp
+  - networks
+  - python
 ogImage: ""
-description: New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.
+description: Build a one-way reliable network protocol with error control, flow control and connection management.
 ---
 
-New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.
+Build a one-way reliable network protocol with error control, flow control and connection management on top of the UDP protocol using Python.
 
 ## Table of contents
+
+##
 
 ## Intro
 
